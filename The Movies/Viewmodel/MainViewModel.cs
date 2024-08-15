@@ -6,11 +6,13 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using The_Movies.Model;
 
 namespace The_Movies.ViewModel
 {
     internal class MainViewModel : ViewModelBase
     {
+		private readonly MovieRepository _movieRepository = new MovieRepository();
 		private string _title;
         private string _genre;
         private uint _duration;
@@ -28,8 +30,11 @@ namespace The_Movies.ViewModel
 				throw new Exception();
 			}
 
-
-		}
+            _movieRepository.CreateMovie(_title, _genre, (int)_duration);
+			MovieTitle = "";
+			MovieGenre = "";
+			MovieDuration = 0;
+        }
 
         public RelayCommand AddMovieCommand => new RelayCommand(execute => AddMovie());
 

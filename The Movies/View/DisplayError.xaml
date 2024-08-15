@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Window1" Height="450" Width="800">
     <Grid>
-        <TextBlock HorizontalAlignment="Center" Margin="0,101,0,0" 
+        <TextBlock HorizontalAlignment="Left" Margin="305,96,0,0" 
             TextWrapping="Wrap" 
             Text="Add a movie:" 
             VerticalAlignment="Top" 
