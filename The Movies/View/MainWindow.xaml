@@ -50,7 +50,7 @@
 
         <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="350,288,0,0"
         CornerRadius="5" Background="LightGray" BorderBrush="Gray" BorderThickness="2.5">
-            <TextBlock Height="30" Width="230" Text="" 
+            <TextBox Height="30" Width="230" Text="{Binding MovieDuration, UpdateSourceTrigger=PropertyChanged}" 
             Background="Transparent" 
             FontFamily="Bahnschrift SemiBold SemiCondensed" 
             FontSize="22" TextAlignment="Center"
@@ -58,7 +58,7 @@
         </Border>
         <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="350,222,0,0"
         CornerRadius="5" Background="LightGray" BorderBrush="Gray" BorderThickness="2.5">
-            <TextBlock Height="30" Width="230" Text="" 
+            <TextBox Height="30" Width="230" Text="{Binding MovieGenre, UpdateSourceTrigger=PropertyChanged}" 
             Background="Transparent" 
             FontFamily="Bahnschrift SemiBold SemiCondensed" 
             FontSize="22" TextAlignment="Center"
@@ -67,7 +67,7 @@
 
         <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="350,158,0,0"
         CornerRadius="5" Background="LightGray" BorderBrush="Gray" BorderThickness="2.5">
-            <TextBlock Height="30" Width="230" Text="" 
+            <TextBox Height="30" Width="230" Text="{Binding MovieTitle, UpdateSourceTrigger=PropertyChanged}" 
             Background="Transparent" 
             FontFamily="Bahnschrift SemiBold SemiCondensed" 
             FontSize="22" TextAlignment="Center"
@@ -79,7 +79,8 @@
                 Background="#D8998A"
                 BorderBrush="#986051"
                 BorderThickness="1.5"
-                FontFamily="Bahnschrift SemiBold SemiCondensed" Click="Button_Click" FontSize="15"
+                FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="15"
+                Command="{Binding AddMovieCommand}"
                 
                 />
         <Button Content="Show all" HorizontalAlignment="Left" 

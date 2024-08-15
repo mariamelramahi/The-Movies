@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using The_Movies.ViewModel;
 
 namespace The_Movies
 {
@@ -19,14 +20,11 @@ namespace The_Movies
         public MainWindow()
         {
             InitializeComponent();
+
+            DataContext = new MainViewModel();
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
