@@ -11,9 +11,9 @@ namespace The_Movies.Model
     {
         private string filePath = "movies.csv";
 
-        public void CreateMovie(string title, string genre, int duration)
+        public void CreateMovie(string title, string genre, int duration, string theater, string director)
         {
-            Movie newMovie = new Movie(title, genre, duration);
+            Movie newMovie = new Movie(title, genre, duration, theater, director);
             SaveMovieToCSV(newMovie);
 
         }
@@ -22,7 +22,7 @@ namespace The_Movies.Model
         {
             using (StreamWriter writer = new StreamWriter(filePath, true))
             {
-                writer.WriteLine($"{movie._title},{movie._genre},{movie._duration}");
+                writer.WriteLine($"Movie Title: {movie._title},Movie Genre: {movie._genre},Movie Duration: {movie._duration}");
             }
         }
 
@@ -40,7 +40,9 @@ namespace The_Movies.Model
                     string title = values[0];
                     string genre = values[1];
                     int duration = int.Parse(values[2]);
-                    Movie newMovie = new Movie(title, genre, duration);
+                    string theater = values[3];
+                    string director = values[4];
+                    Movie newMovie = new Movie(title, genre, duration, theater, director);
                 }
             }
 

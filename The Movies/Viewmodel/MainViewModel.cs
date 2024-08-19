@@ -16,6 +16,8 @@ namespace The_Movies.ViewModel
 		private string _title;
         private string _genre;
         private uint _duration;
+		private string _theater;
+		private string _director;
 
 		public void AddMovie()
 		{
@@ -30,10 +32,12 @@ namespace The_Movies.ViewModel
 				throw new Exception();
 			}
 
-            _movieRepository.CreateMovie(_title, _genre, (int)_duration);
+            _movieRepository.CreateMovie(_title, _genre, (int)_duration, _theater, _director);
 			MovieTitle = "";
 			MovieGenre = "";
 			MovieDuration = 0;
+			MovieTheater = "";
+			MovieDirector = "";
         }
 
         public RelayCommand AddMovieCommand => new RelayCommand(execute => AddMovie());
@@ -69,11 +73,26 @@ namespace The_Movies.ViewModel
 			}
 		}
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-			
-        }
 
+		public string MovieTheater
+			{
+			get { return _theater; }
+			set
+				{
+				_theater = value;
+				OnPropertyChanged();
+				}
+			}
 
+		public string MovieDirector
+			{
+			get { return _director; }
+			set
+				{
+				_director = value;
+				OnPropertyChanged();
+				}
+			}
+		}
     }
-}
+
