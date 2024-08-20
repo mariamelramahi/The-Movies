@@ -18,10 +18,14 @@ namespace The_Movies.ViewModel
         private uint _duration;
 		private string _theater;
 		private string _director;
+		private uint _theaterhall;
+		private DateTime _showtime;
+		private DateTime _premeiredate;
+
 
 		public void AddMovie()
 		{
-			if (string.IsNullOrEmpty(_genre))
+			if (string.IsNullOrEmpty(_title))
 			{
 				throw new Exception();
 			} else if (string.IsNullOrEmpty(_genre))
@@ -31,13 +35,38 @@ namespace The_Movies.ViewModel
 			{
 				throw new Exception();
 			}
+			else if (string.IsNullOrEmpty(_theater))
+			{
+				throw new Exception();
+			}
+			else if (string.IsNullOrEmpty(_director))
+			{
+				throw new Exception();
+			}
+			else if (_theaterhall == 0)
+			{
+				throw new Exception();
+			}
+			else if (_showtime == DateTime.MinValue)
+			{
+				throw new Exception();
+			}
+			else if (_premeiredate == DateTime.MinValue)
+			{
+				throw new Exception();
+			}
+		
 
-            _movieRepository.CreateMovie(_title, _genre, (int)_duration, _theater, _director);
+            _movieRepository.CreateMovie(_title, _genre, (uint)_duration, _theater, _director, (uint)_theaterhall, _showtime, _premeiredate);
 			MovieTitle = "";
 			MovieGenre = "";
 			MovieDuration = 0;
 			MovieTheater = "";
 			MovieDirector = "";
+			MovieTheatreHall = 0;
+			MovieShowtime = DateTime.Now;
+			MoviePremeireDate = DateTime.Now;
+
         }
 
         public RelayCommand AddMovieCommand => new RelayCommand(execute => AddMovie());
@@ -93,6 +122,34 @@ namespace The_Movies.ViewModel
 				OnPropertyChanged();
 				}
 			}
+		public uint MovieTheatreHall
+            {
+            get { return _theaterhall; }
+            set
+                {
+                _theaterhall = value;
+                OnPropertyChanged();
+                }
+            }
+		public DateTime MovieShowtime
+            {
+			get { return _showtime; }
+			set
+                {
+                _showtime = value;
+                OnPropertyChanged();
+                }
+            }
+		public DateTime MoviePremeireDate
+            {
+			get { return _premeiredate; }
+			set
+                {
+                _premeiredate = value;
+                OnPropertyChanged();
+                }
+            }
 		}
+
     }
 

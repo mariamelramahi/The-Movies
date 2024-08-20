@@ -10,17 +10,23 @@ namespace The_Movies.Model
     {
         public string _title { get; set; }
         public string _genre { get; set; }
-        public int _duration { get; set; }
+        public uint _duration { get; set; }
         public string _theater { get; set; }
-        public string director { get; set; }
+        public string _director { get; set; }
+        public uint _theaterhall { get; set; }
+        public DateTime _showtime { get; set; }
+        public DateTime _premeiredate { get; set; }
 
-        public Movie(string title, string genre, int duration, string theater, string director)
+        public Movie(string title, string genre, uint duration, string theater, string director, uint theaterhall, DateTime showtime, DateTime premeiredate)
         {
             _title = title;
             _genre = genre;
             _duration = duration;
             _theater = theater;
-            this.director = director;
+            _director = director;
+            _theaterhall = theaterhall;
+            _showtime = showtime;
+            _premeiredate = premeiredate;
         }
 
 

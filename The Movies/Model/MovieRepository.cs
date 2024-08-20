@@ -4,16 +4,28 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Globalization;
 
 namespace The_Movies.Model
 {
     class MovieRepository
     {
         private string filePath = "movies.csv";
-
-        public void CreateMovie(string title, string genre, int duration, string theater, string director)
+        public MovieRepository()
         {
-            Movie newMovie = new Movie(title, genre, duration, theater, director);
+            if (!File.Exists(filePath))
+            {
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+                    writer.WriteLine("Movie Title,Movie Genre,Movie Duration,Theatre,Director,Theatre Hall,Showtime,Premeire Date");
+                }
+            }
+        }
+
+        public void CreateMovie(string title, string genre, uint duration, string theater, string director, uint theatrehall, DateTime showtime, DateTime premeiredate)
+        {
+
+            Movie newMovie = new Movie(title, genre, duration, theater, director, theatrehall, showtime, premeiredate);
             SaveMovieToCSV(newMovie);
 
         }
@@ -22,7 +34,7 @@ namespace The_Movies.Model
         {
             using (StreamWriter writer = new StreamWriter(filePath, true))
             {
-                writer.WriteLine($"Movie Title: {movie._title},Movie Genre: {movie._genre},Movie Duration: {movie._duration}");
+                writer.WriteLine($"{movie._title}, {movie._genre}, {movie._duration}, {movie._theater}, {movie._director}, {movie._theaterhall},{movie._showtime.ToString("f")}, {movie._premeiredate.ToString("f")}");
             }
         }
 
@@ -33,20 +45,28 @@ namespace The_Movies.Model
 
             using (StreamReader reader = new StreamReader(filePath))
             {
+                reader.ReadLine();
                 while (!reader.EndOfStream)
                 {
                     string line = reader.ReadLine();
                     string[] values = line.Split(',');
+
                     string title = values[0];
                     string genre = values[1];
-                    int duration = int.Parse(values[2]);
+                    uint duration = uint.Parse(values[2]);
                     string theater = values[3];
                     string director = values[4];
-                    Movie newMovie = new Movie(title, genre, duration, theater, director);
+                    uint theaterhall = uint.Parse(values[5]);
+                    DateTime showtime = DateTime.Parse(values[6], null, DateTimeStyles.RoundtripKind);
+                    DateTime premeiredate = DateTime.Parse(values[7], null, DateTimeStyles.RoundtripKind);
+
+                    Movie newMovie = new Movie(title, genre, duration, theater, director, theaterhall, showtime, premeiredate);
                 }
             }
 
         }
+
+   
 
     }
 }
