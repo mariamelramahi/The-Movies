@@ -55,7 +55,6 @@ namespace The_Movies.ViewModel
 			{
 				throw new Exception();
 			}
-		
 
             _movieRepository.CreateMovie(_title, _genre, (uint)_duration, _theater, _director, (uint)_theaterhall, _showtime, _premeiredate);
 			MovieTitle = "";

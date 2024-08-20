@@ -163,8 +163,8 @@
                 FontSize="18" TextAlignment="Center" Margin="-2,6,0,6"
              />
         </Border>
-        <DatePicker HorizontalAlignment="Left" Height="28" Margin="518,271,0,0" VerticalAlignment="Top" Width="167"/>
-        <DatePicker HorizontalAlignment="Left" Height="26" Margin="518,339,0,0" VerticalAlignment="Top" Width="163"/>
+        <DatePicker HorizontalAlignment="Left" Height="28" Margin="518,271,0,0" VerticalAlignment="Top" Width="167" SelectedDate="{Binding MovieShowtime, UpdateSourceTrigger=PropertyChanged}"/>
+        <DatePicker HorizontalAlignment="Left" Height="26" Margin="518,339,0,0" VerticalAlignment="Top" Width="163" SelectedDate="{Binding MoviePremeireDate, UpdateSourceTrigger=PropertyChanged}"/> 
 
 
     </Grid>
