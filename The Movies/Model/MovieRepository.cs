@@ -13,15 +13,25 @@ namespace The_Movies.Model
         private string filePath = "movies.csv";
         public MovieRepository()
         {
+            EnsureHeader();
+        }
+        private void EnsureHeader()
+        {
             if (!File.Exists(filePath))
             {
                 using (StreamWriter writer = new StreamWriter(filePath))
                 {
-                    writer.WriteLine("Movie Title,Movie Genre,Movie Duration,Theatre,Director,Theatre Hall,Showtime,Premeire Date");
+                    writer.WriteLine("Title, Genre, Duration, Theater, Director, Theaterhall, Showtime, Premeiredate");
+                }
+            }
+            else if (new FileInfo(filePath).Length == 0)
+            {
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+                    writer.WriteLine("Title, Genre, Duration, Theater, Director, Theaterhall, Showtime, Premeiredate");
                 }
             }
         }
-
         public void CreateMovie(string title, string genre, uint duration, string theater, string director, uint theatrehall, DateTime showtime, DateTime premeiredate)
         {
 
