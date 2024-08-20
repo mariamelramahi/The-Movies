@@ -19,8 +19,8 @@ namespace The_Movies.ViewModel
 		private string _theater;
 		private string _director;
 		private uint _theaterhall;
-		private DateTime _showtime;
-		private DateTime _premeiredate;
+		private DateTime? _showtime;
+		private DateTime? _premeiredate;
 
 
 		public void AddMovie()
@@ -47,16 +47,16 @@ namespace The_Movies.ViewModel
 			{
 				throw new Exception();
 			}
-			else if (_showtime == DateTime.MinValue)
+			else if (_showtime == null)
 			{
 				throw new Exception();
 			}
-			else if (_premeiredate == DateTime.MinValue)
+			else if (_premeiredate == null)
 			{
 				throw new Exception();
 			}
 
-            _movieRepository.CreateMovie(_title, _genre, (uint)_duration, _theater, _director, (uint)_theaterhall, _showtime, _premeiredate);
+            _movieRepository.CreateMovie(_title, _genre, (uint)_duration, _theater, _director, (uint)_theaterhall, (DateTime)_showtime, (DateTime)_premeiredate);
 			MovieTitle = "";
 			MovieGenre = "";
 			MovieDuration = 0;
@@ -130,16 +130,21 @@ namespace The_Movies.ViewModel
                 OnPropertyChanged();
                 }
             }
-		public DateTime MovieShowtime
+		public DateTime? MovieShowtime
             {
-			get { return _showtime; }
+			get 
+				{
+				//if (_showtime == DateTime.MinValue)
+				//	_showtime = DateTime.Now;
+				return _showtime;
+				}
 			set
                 {
                 _showtime = value;
                 OnPropertyChanged();
                 }
             }
-		public DateTime MoviePremeireDate
+		public DateTime? MoviePremeireDate
             {
 			get { return _premeiredate; }
 			set
