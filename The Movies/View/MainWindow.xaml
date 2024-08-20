@@ -60,7 +60,7 @@
 
         <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="171,330,0,0"
             CornerRadius="5" Background="LightGray" BorderBrush="Gray" BorderThickness="2.5">
-            <TextBox Height="30" Width="170" Text="{Binding MovieTheatre, UpdateSourceTrigger=PropertyChanged}" 
+            <TextBox Height="30" Width="170" Text="{Binding MovieTheater, UpdateSourceTrigger=PropertyChanged}" 
             Background="Transparent" 
             FontFamily="Bahnschrift SemiBold SemiCondensed" 
             FontSize="22" TextAlignment="Center"
@@ -70,7 +70,7 @@
 
         <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="510,140,0,0"
         CornerRadius="5" Background="LightGray" BorderBrush="Gray" BorderThickness="2.5">
-            <TextBox Height="30" Width="170" Text="{Binding MovieDuration, UpdateSourceTrigger=PropertyChanged}" 
+            <TextBox Height="30" Width="170" Text="{Binding MovieDirector, UpdateSourceTrigger=PropertyChanged}" 
             Background="Transparent" 
             FontFamily="Bahnschrift SemiBold SemiCondensed" 
             FontSize="22" TextAlignment="Center"
@@ -80,7 +80,7 @@
 
         <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="510,205,0,0"
         CornerRadius="5" Background="LightGray" BorderBrush="Gray" BorderThickness="2.5">
-            <TextBox Height="30" Width="170" Text="{Binding MovieDuration, UpdateSourceTrigger=PropertyChanged}" 
+            <TextBox Height="30" Width="170" Text="{Binding MovieTheatreHall, UpdateSourceTrigger=PropertyChanged}"
             Background="Transparent" 
             FontFamily="Bahnschrift SemiBold SemiCondensed" 
             FontSize="22" TextAlignment="Center"
