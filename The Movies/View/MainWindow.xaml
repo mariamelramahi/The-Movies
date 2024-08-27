@@ -7,9 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="700">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="272,72,0,0" 
+
+
+        <TextBlock HorizontalAlignment="Left" Margin="278,127,0,0" 
                    TextWrapping="Wrap" 
-                   Text="Add a movie:" 
+                   Text="Add a movie" 
                    VerticalAlignment="Top" 
                    FontFamily="Bahnschrift SemiBold SemiCondensed" 
                    Height="31" Width="160" 
@@ -23,24 +25,24 @@
                    Height="50" Width="219" 
                    FontSize="50" 
                    Foreground="White"/>
-        <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,141,0,0"
-                CornerRadius="5" Background="#DBB9B1" BorderBrush="#B07A6B" BorderThickness="2.5" Height="38" Width="115">
+        <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,182,0,0"
+                CornerRadius="5" Background="#DBB9B1" BorderBrush="#B07A6B" BorderThickness="2.5" Height="38" Width="114">
             <TextBlock Text="Title" 
                      Background="Transparent" 
                      FontFamily="Bahnschrift SemiBold SemiCondensed" 
                      FontSize="18" TextAlignment="Center" Margin="24,6,24,6"
                      />
         </Border>
-        <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,205,0,0"
-        CornerRadius="5" Background="#DBB9B1" BorderBrush="#B07A6B" BorderThickness="2.5" Height="38" Width="115">
+        <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,246,0,0"
+        CornerRadius="5" Background="#DBB9B1" BorderBrush="#B07A6B" BorderThickness="2.5" Height="38" Width="114">
             <TextBlock Text="Genre" 
              Background="Transparent" 
              FontFamily="Bahnschrift SemiBold SemiCondensed" 
              FontSize="18" TextAlignment="Center" Margin="24,6,24,6"
              />
         </Border>
-        <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,269,0,0"
-        CornerRadius="5" Background="#DBB9B1" BorderBrush="#B07A6B" BorderThickness="2.5" Height="38" Width="115">
+        <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="376,247,0,0"
+        CornerRadius="5" Background="#DBB9B1" BorderBrush="#B07A6B" BorderThickness="2.5" Height="38" Width="116">
             <TextBlock Text="Duration" 
              Background="Transparent" 
              FontFamily="Bahnschrift SemiBold SemiCondensed" 
@@ -49,38 +51,39 @@
         </Border>
 
 
-        <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="171,271,0,0"
+        <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="516,248,0,0"
         CornerRadius="5" Background="LightGray" BorderBrush="Gray" BorderThickness="2.5">
-            <TextBox Height="30" Width="170" Text="{Binding MovieDuration, UpdateSourceTrigger=PropertyChanged}" 
+            <TextBox Height="30" Width="156" Text="{Binding MovieDuration, UpdateSourceTrigger=PropertyChanged}" 
             Background="Transparent" 
             FontFamily="Bahnschrift SemiBold SemiCondensed" 
-            FontSize="22" TextAlignment="Center"
-            />
-        </Border>
-
-        <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="171,330,0,0"
-            CornerRadius="5" Background="LightGray" BorderBrush="Gray" BorderThickness="2.5">
-            <TextBox Height="30" Width="170" Text="{Binding MovieTheater, UpdateSourceTrigger=PropertyChanged}" 
-            Background="Transparent" 
-            FontFamily="Bahnschrift SemiBold SemiCondensed" 
-            FontSize="22" TextAlignment="Center"
+            FontSize="22" TextAlignment="Center" TextChanged="TextBox_TextChanged_1"
             />
         </Border>
 
 
-        <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="510,140,0,0"
+
+
+        <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="518,181,0,0"
         CornerRadius="5" Background="LightGray" BorderBrush="Gray" BorderThickness="2.5">
-            <TextBox Height="30" Width="170" Text="{Binding MovieDirector, UpdateSourceTrigger=PropertyChanged}" 
+            <TextBox Height="30" Width="146" Text="{Binding MovieDirector, UpdateSourceTrigger=PropertyChanged}" 
             Background="Transparent" 
             FontFamily="Bahnschrift SemiBold SemiCondensed" 
             FontSize="22" TextAlignment="Center"
     />
         </Border>
 
-
-        <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="510,205,0,0"
+        <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="170,246,0,0"
         CornerRadius="5" Background="LightGray" BorderBrush="Gray" BorderThickness="2.5">
-            <TextBox Height="30" Width="170" Text="{Binding MovieTheatreHall, UpdateSourceTrigger=PropertyChanged}"
+            <TextBox Height="30" Width="170" Text="{Binding MovieGenre, UpdateSourceTrigger=PropertyChanged}" 
+            Background="Transparent" 
+            FontFamily="Bahnschrift SemiBold SemiCondensed" 
+            FontSize="22" TextAlignment="Center"
+            />
+        </Border>
+
+        <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="170,182,0,0"
+        CornerRadius="5" Background="LightGray" BorderBrush="Gray" BorderThickness="2.5">
+            <TextBox Height="30" Width="170" Text="{Binding MovieTitle, UpdateSourceTrigger=PropertyChanged}" 
             Background="Transparent" 
             FontFamily="Bahnschrift SemiBold SemiCondensed" 
             FontSize="22" TextAlignment="Center"
@@ -88,83 +91,40 @@
         </Border>
 
 
-
-        <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="170,205,0,0"
-        CornerRadius="5" Background="LightGray" BorderBrush="Gray" BorderThickness="2.5">
-            <TextBox Height="30" Width="174" Text="{Binding MovieGenre, UpdateSourceTrigger=PropertyChanged}" 
-            Background="Transparent" 
-            FontFamily="Bahnschrift SemiBold SemiCondensed" 
-            FontSize="22" TextAlignment="Center"
-            />
-        </Border>
-
-        <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="167,141,0,0"
-        CornerRadius="5" Background="LightGray" BorderBrush="Gray" BorderThickness="2.5">
-            <TextBox Height="30" Width="177" Text="{Binding MovieTitle, UpdateSourceTrigger=PropertyChanged}" 
-            Background="Transparent" 
-            FontFamily="Bahnschrift SemiBold SemiCondensed" 
-            FontSize="22" TextAlignment="Center"
-            />
-        </Border>
-        <Button Content="Add" HorizontalAlignment="Left" 
-                Height="25" Margin="255,416,0,0" 
-                VerticalAlignment="Top" Width="90"
+        <Button Content="Next" HorizontalAlignment="Left" 
+                Height="39" Margin="228,404,0,0" 
+                VerticalAlignment="Top" Width="114"
                 Background="#D8998A"
                 BorderBrush="#986051"
                 BorderThickness="1.5"
                 FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="15"
-                Command="{Binding AddMovieCommand}"
+                Command="{Binding AddMovieCommand}" Click="Button_Click"
                 
                 />
-        <Button Content="Show all" HorizontalAlignment="Left" 
-                Height="25" Margin="375,416,0,0" 
-                VerticalAlignment="Top" Width="90"
+        <Button Content="Back" HorizontalAlignment="Left" 
+                Height="39" Margin="380,404,0,0" 
+                VerticalAlignment="Top" Width="114"
                 Background="LightGray"
                 BorderBrush="Gray"
                 BorderThickness="1.5"
-                FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="15"/>
-        <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="375,141,0,0"
-            CornerRadius="5" Background="#DBB9B1" BorderBrush="#B07A6B" BorderThickness="2.5" Height="38" Width="115">
+                FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="15" Click="Button_Click_1"/>
+        <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="374,182,0,0"
+            CornerRadius="5" Background="#DBB9B1" BorderBrush="#B07A6B" BorderThickness="2.5" Height="38" Width="116">
             <TextBlock 
                 Background="Transparent" 
                 FontFamily="Bahnschrift SemiBold SemiCondensed" 
                 FontSize="18" TextAlignment="Center" Margin="24,6,24,6" Text="Director"
                      />
         </Border>
-        <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="375,199,0,0"
-            CornerRadius="5" Background="#DBB9B1" BorderBrush="#B07A6B" BorderThickness="2.5" Height="38" Width="115">
-            <TextBlock Text="Theatre Hall" 
-                Background="Transparent" 
-                FontFamily="Bahnschrift SemiBold SemiCondensed" 
-                FontSize="18" TextAlignment="Center" Margin="8,6,6,6"
-             />
-        </Border>
-        <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="375,271,0,0"
-            CornerRadius="5" Background="#DBB9B1" BorderBrush="#B07A6B" BorderThickness="2.5" Height="38" Width="115">
-            <TextBlock Text="Show Time" 
-                Background="Transparent" 
-                FontFamily="Bahnschrift SemiBold SemiCondensed" 
-                FontSize="18" TextAlignment="Center" Margin="16,6,16,6"
-             />
-        </Border>
-        <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,331,0,0"
-            CornerRadius="5" Background="#DBB9B1" BorderBrush="#B07A6B" BorderThickness="2.5" Height="38" Width="115">
-            <TextBlock 
-                Background="Transparent" 
-                FontFamily="Bahnschrift SemiBold SemiCondensed" 
-                FontSize="18" TextAlignment="Center" Margin="24,6,24,6" Text="Theatre"
-             />
-        </Border>
-        <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="375,331,0,0"
-            CornerRadius="5" Background="#DBB9B1" BorderBrush="#B07A6B" BorderThickness="2.5" Height="38" Width="115">
+        <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="28,315,0,0"
+            CornerRadius="5" Background="#DBB9B1" BorderBrush="#B07A6B" BorderThickness="2.5" Height="38" Width="114">
             <TextBlock Text="Premeire Date" 
                 Background="Transparent" 
                 FontFamily="Bahnschrift SemiBold SemiCondensed" 
                 FontSize="18" TextAlignment="Center" Margin="-2,6,0,6"
-             />
+         />
         </Border>
-        <DatePicker HorizontalAlignment="Left" Height="28" Margin="518,271,0,0" VerticalAlignment="Top" Width="167" SelectedDate="{Binding MovieShowtime, UpdateSourceTrigger=PropertyChanged}" DisplayDateStart="1/1/1900"/>
-        <DatePicker HorizontalAlignment="Left" Height="26" Margin="518,339,0,0" VerticalAlignment="Top" Width="163" SelectedDate="{Binding MoviePremeireDate, UpdateSourceTrigger=PropertyChanged}"/> 
+        <DatePicker HorizontalAlignment="Left" Height="26" Margin="170,322,0,0" VerticalAlignment="Top" Width="164" SelectedDate="{Binding MoviePremeireDate, UpdateSourceTrigger=PropertyChanged}"/>
 
 
     </Grid>
