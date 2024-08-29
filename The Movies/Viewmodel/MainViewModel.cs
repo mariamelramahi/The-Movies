@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using The_Movies.Model;
 
-namespace The_Movies.ViewModel
+namespace The_Movies.Viewmodel
 {
     internal class MainViewModel : ViewModelBase
     {

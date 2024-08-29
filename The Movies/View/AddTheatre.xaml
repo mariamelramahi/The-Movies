@@ -6,12 +6,22 @@
         xmlns:local="clr-namespace:The_Movies.View"
         mc:Ignorable="d"
         Title="AddTheatre" Height="500" Width="700">
-    <Grid>
+    <Grid Background="#FF4D4D4D">
         <Grid.RowDefinitions>
-            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*" />
             <RowDefinition Height="60*"/>
             <RowDefinition Height="20*"/>
         </Grid.RowDefinitions>
+
+        <!-- Row 0 -->
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" 
+            TextWrapping="Wrap" 
+            Text="The Movies" 
+            VerticalAlignment="Top" 
+            FontFamily="Bahnschrift SemiBold SemiCondensed" 
+            Height="50" Width="219" 
+            FontSize="50" 
+            Foreground="White"/>
         
         <!-- Row 1 -->
         <Grid Grid.Row="1" >
@@ -21,7 +31,7 @@
             </Grid.ColumnDefinitions>
 
             <!-- ListView -->
-            <ListView x:Name="lstTheatresList" Grid.Column="1" Margin="5,5,5,5">
+            <ListView x:Name="lstTheatresList" Grid.Column="1" Margin="5,5,10,5">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn x:Name="lstTheatreName" Header="Biografnavn" Width="130" DisplayMemberBinding="{Binding _theatreName, UpdateSourceTrigger=PropertyChanged}"/>
@@ -67,14 +77,30 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Label>Navn:</Label>
-                <TextBox Grid.Column="1" Margin="0,0,0,10" x:Name="tbName" Text="{Binding TheatreName}" />
+                <TextBox Grid.Column="1" Margin="5,5,5,5" x:Name="tbName" Text="{Binding TheatreName}" />
                 <Label Grid.Row="1">By:</Label>
-                <TextBox Grid.Row="1" Grid.Column="1" Margin="0,0,0,10" x:Name="tbCity" Text="{Binding CityName}"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Margin="5,5,5,5" x:Name="tbCity" Text="{Binding CityName}"/>
                 <Label Grid.Row="2">Pladser:</Label>
-                <TextBox Grid.Row="2" Grid.Column="1" x:Name="tbSeats" Text="{Binding Seats}" />
-                <Button Grid.Row="3" x:Name="btnAdd" Content="Tilføj" Command="{ Binding AddTheatreCommand }" />
-                <Button Grid.Row="3" Grid.Column="3" x:Name="btnSave" Content="Gem" Command="{ Binding SaveCommand }" />
+                <TextBox Grid.Row="2" Grid.Column="1" x:Name="tbSeats" Text="{Binding Seats}" Margin="5,5,5,5" />
+                <Button Grid.Row="3" x:Name="btnAdd" Content="Tilføj" Command="{ Binding AddTheatreCommand }" Margin="5,5,5,5" />
+                <Button Grid.Row="3" Grid.Column="3" x:Name="btnSave" Content="Gem" Command="{ Binding SaveCommand }" Margin="5,5,5,5" />
             </Grid>
         </Grid>
+
+        <!-- Row 2 -->
+        <Button 
+            Grid.Row="2"
+            Content="Go Back" 
+            HorizontalAlignment="Right" 
+            Margin="40,0"
+            Height="25" Width="90"
+            Background="LightGray"
+            BorderBrush="Gray"
+            BorderThickness="1.5"
+            FontFamily="Bahnschrift SemiBold SemiCondensed" 
+            FontSize="15" 
+            Click="Button_Click" />
+
+
     </Grid>
 </Window>

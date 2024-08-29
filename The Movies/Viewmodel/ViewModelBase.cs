@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace The_Movies.ViewModel
+namespace The_Movies.Viewmodel
 {
     internal class ViewModelBase : INotifyPropertyChanged
     {

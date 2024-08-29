@@ -5,8 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using The_Movies.Model;
-using The_Movies.View;
-using The_Movies.ViewModel;
 
 namespace The_Movies.Viewmodel
 {

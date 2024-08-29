@@ -31,17 +31,11 @@ namespace The_Movies.View
             lstTheatresList.ItemsSource = vm.theatres;
         }
 
-        //public AddTheatre()
-        //{
-        //    InitializeComponent();
-
-        //    TheatreMainViewModel mvm = new TheatreMainViewModel();
-        //    this.DataContext = mvm;
-        //}
-
-        //private void btnAdd_Click(object sender, RoutedEventArgs e)
-        //{
-        //    the
-        //}
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
     }
 }
