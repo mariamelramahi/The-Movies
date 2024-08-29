@@ -76,6 +76,38 @@ namespace The_Movies.Model
 
         }
 
+        public List<Movie> GetMovies()
+        {
+            List<Movie> movies = new List<Movie>();
+            if (!File.Exists(filePath))
+            {
+                return movies;
+            }
+
+            using (StreamReader reader = new StreamReader(filePath))
+            {
+                reader.ReadLine();
+                while (!reader.EndOfStream)
+                {
+                    string line = reader.ReadLine();
+                    string[] values = line.Split(',');
+
+                    string title = values[0];
+                    string genre = values[1];
+                    uint duration = uint.Parse(values[2]);
+                    string theater = values[3];
+                    string director = values[4];
+                    uint theaterhall = uint.Parse(values[5]);
+                    DateTime showtime = DateTime.Parse(values[6], null, DateTimeStyles.RoundtripKind);
+                    DateTime premeiredate = DateTime.Parse(values[7], null, DateTimeStyles.RoundtripKind);
+
+                    Movie newMovie = new Movie(title, genre, duration, theater, director, theaterhall, showtime, premeiredate);
+                    movies.Add(newMovie);
+                }
+            }
+            return movies;
+        }
+
    
 
     }

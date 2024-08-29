@@ -32,7 +32,9 @@ namespace The_Movies
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Program program = new Program();
+            program.Show();
+            this.Close();
         }
 
         private void Button_Click_AddTheatre(object sender, RoutedEventArgs e)
@@ -42,12 +44,14 @@ namespace The_Movies
             this.Close();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            MovieList movieList = new MovieList();
+            movieList.Show();
+            this.Close();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_Click_2(object sender, RoutedEventArgs e)
         {
 
         }
