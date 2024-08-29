@@ -9,6 +9,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using The_Movies.ViewModel;
+using The_Movies.View;
 
 namespace The_Movies
 {
@@ -27,6 +28,18 @@ namespace The_Movies
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_AddTheatre(object sender, RoutedEventArgs e)
+        {
+            AddTheatre addTheatreWindow = new AddTheatre();
+            addTheatreWindow.Show();
+            this.Close();
         }
     }
 }
