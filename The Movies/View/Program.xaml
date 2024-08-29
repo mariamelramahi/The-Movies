@@ -76,7 +76,6 @@
             ><Run Text="Show "/><Run Language="da-dk" Text="Time"/></TextBlock>
         </Border>
         <DatePicker HorizontalAlignment="Left" Height="28" Margin="510,272,0,0" VerticalAlignment="Top" Width="167" SelectedDate="{Binding MovieShowtime, UpdateSourceTrigger=PropertyChanged}" DisplayDateStart="1/1/1900"/>
-        <Label Content="Program:" HorizontalAlignment="Center" Margin="0,130,0,0" VerticalAlignment="Top" Height="33" Width="96" Foreground="White" FontSize="20" FontFamily="Bahnschrift SemiBold SemiCondensed"/>
         <Button Content="Add" HorizontalAlignment="Left" 
             Height="39" Margin="223,363,0,0" 
             VerticalAlignment="Top" Width="114"
@@ -94,6 +93,14 @@
             BorderBrush="Gray"
             BorderThickness="1.5"
             FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="15"/>
+        <TextBlock HorizontalAlignment="Left" Margin="302,131,0,0" 
+            TextWrapping="Wrap" 
+            Text="Program" 
+            VerticalAlignment="Top" 
+            FontFamily="Bahnschrift SemiBold SemiCondensed" 
+            Height="41" Width="160" 
+            FontSize="31" 
+            Foreground="White"/>
 
     </Grid>
 </Window>
